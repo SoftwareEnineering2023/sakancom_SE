@@ -1,4 +1,3 @@
-@tag
   Feature: Admin login
     Description: The administrator logs into the dashboard
     Actor: Administrator
@@ -12,5 +11,7 @@
     Scenario: Administrator entered the wrong password
       Given that the administrator is not logged in
       And the password is "wrong password"
-      Then the administrator login succeeds
+      Then the administrator login fails
+      And the administrator is not logged in
+
 
