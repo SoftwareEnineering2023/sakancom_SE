@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertEquals;
 
 
-public class feature2 {
+public class feature1 {
 
     @When("user click on insert house and flag is {string}")
     public void userClickOnInsertHouseAndFlagIs(String string) {
