@@ -12,7 +12,7 @@ public class sakanat {
 
     public  sakanat()
     {
-        addhouse();
+        addadmin();
         addhouse();
         addowner();
         addtenant();
@@ -71,9 +71,9 @@ public void addhouse()
         admin1.add(h1);
 
         AdminClass h2=new AdminClass();
-        h1.setPassword("654321**");
-        h1.setUsername("Rayhan Mahmoud");
-        admin1.add(h1);
+        h2.setPassword("654321**");
+        h2.setUsername("Rayhan Mahmoud");
+        admin1.add(h2);
     }
     public void addtenant()
     {

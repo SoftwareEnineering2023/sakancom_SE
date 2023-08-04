@@ -13,17 +13,9 @@ c
 3src/test/java/com/example/sw_raiaTest/feature1.java,0\8\0830dd9f522d9d36b8ee5bacf04598d92ece1791
 `
 0src/main/java/com/example/sw_raia/TESTINPUT.java,f\f\ff5ff34f8d6c96037c9fdb167cbffe701151ef88
-d
-4src/main/java/com/example/sw_raia/logincontrol1.java,a\0\a0ecfc5847af9adb203c637bd6c450a3c8c62923
-e
-5src/main/java/com/example/sw_raia/welcomecontrol.java,6\9\69464b82f92b9690be7ee9f8d5071ffa075fa880
 _
 /src/main/java/com/example/sw_raia/NextPage.java,6\6\66623607d12a0b3fcf759ec7756f5ddcadc5402c
-`
-0src/main/java/com/example/sw_raia/TESTLOGIN.java,0\5\05bf11a5c5abfd87ac965e8170bba567a270186e
 a
 1src/main/java/com/example/sw_raia/HouseClass.java,8\e\8e1a9df851b1b0596fd92c635442a8ddc77ed4c8
-e
-5src/main/java/com/example/sw_raia/TenantControll.java,d\9\d93328731777d50659ddc70891b14137806c5b21
 a
 1src/main/java/com/example/sw_raia/AdminClass.java,a\6\a6ea95fe00f2537e78c777cf7022f0fce9ac1dc6

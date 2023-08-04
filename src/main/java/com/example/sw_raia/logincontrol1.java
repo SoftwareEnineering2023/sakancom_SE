@@ -52,34 +52,36 @@ public class logincontrol1 {
     @FXML
     void loginbutton(MouseEvent event) {
         try {
-            if (adminRadio.isSelected()) {
-                if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
-                    typeuser=1;
-                    NextPage.make("adminpage.fxml","Admin Page");
+            if(username.getText().isEmpty()||password.getText().isEmpty())
+                JOptionPane.showMessageDialog(null, "User name or Password is empty ", "unvalied", JOptionPane.ERROR_MESSAGE);
+else {
+                if (adminRadio.isSelected()) {
+                    typeuser = 1;
+                    if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
+                        NextPage.make("adminpage.fxml", "Admin Page");
+                    }
+
+                } else if (ownerRadio.isSelected()) {
+                    typeuser = 2;
+                    if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
+                        NextPage.make("insert.fxml", "houses");
+
+                    }
+                } else if (tenantRadio.isSelected()) {
+                    typeuser = 3;
+
+                    if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
+                        NextPage.make("Tenant.fxml", "Tenant Page");
+
+                    }
+
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please select one of radio button ", "Unvalid", JOptionPane.ERROR_MESSAGE);
+
                 }
 
-            } else if (ownerRadio.isSelected()) {
-                if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
-                    typeuser=2;
-                    NextPage.make("insert.fxml","houses");
-
-                }
             }
-            else if (tenantRadio.isSelected()) {
-                if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
-                    typeuser=3;
-                    NextPage.make("Tenant.fxml","Tenant Page");
-
-                }
-
-
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Unvalied ", "Please select one of radio button", JOptionPane.ERROR_MESSAGE);
-
-            }
-
-
         } catch (IOException e) {
             logger.log(null, "An error occurred while opening a new window:");
         }
