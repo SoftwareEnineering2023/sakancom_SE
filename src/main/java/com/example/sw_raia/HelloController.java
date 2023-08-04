@@ -12,11 +12,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
-
 public class HelloController {
     String s1="Unvalied number";
-    private List<HouseClass> house1 = new ArrayList<>();
+
     String temp;
     private String errorMassage="errorMassage";
 
@@ -70,6 +68,7 @@ public class HelloController {
 
 
 
+
     @FXML
     void savedhouse(ActionEvent event) {
         if(location2.getText().isEmpty() || price2.getText().isEmpty() || services2.getText().isEmpty() || bedroom2.getText().isEmpty()
@@ -83,19 +82,26 @@ public class HelloController {
         else{
             int d=0;
             String x = numberHouse2.getText();
-            for (int i = 0; i < house1.size(); i++) {
-                if (house1.get(i).getNumberhouse() == Integer.parseInt(x)) {
+            for (int i = 0; i <sakanat.house1.size(); i++) {
+                if (sakanat.house1.get(i).getNumberhouse() == Integer.parseInt(x)) {
                     JOptionPane.showMessageDialog(null, "the house number already exit ", errorMassage, JOptionPane.ERROR_MESSAGE);
                     d++;
                 }
             }
             if(d==0)
             {
-                HouseClass h=new HouseClass(temp,services2.getText(),location2.getText(),Integer.parseInt(price2.getText()),
-                        Integer.parseInt(balcony2.getText()),Integer.parseInt(bedroom2.getText()),Integer.parseInt(bathroom2.getText())
-                        ,Integer.parseInt(numberHouse2.getText()));
-                house1.add(h);
-                JOptionPane.showMessageDialog(null, "done"+house1.get(0).getNumberhouse(), "correct", JOptionPane.PLAIN_MESSAGE);
+                HouseClass h=new HouseClass();
+                h.setPicture(temp);
+                h.setServices(services2.getText());
+                h.setLocation(location2.getText());
+                h.setPrice(Integer.parseInt(price2.getText()));
+                h.setBalcony(Integer.parseInt(balcony2.getText()));
+                h.setBedroom(Integer.parseInt(bedroom2.getText()));
+                h.setBedroom(Integer.parseInt(bathroom2.getText()));
+                h.setNumberhouse(Integer.parseInt(numberHouse2.getText()));
+
+                sakanat.house1.add(h);
+                JOptionPane.showMessageDialog(null, "done"+sakanat.house1.get(0).getNumberhouse(), "correct", JOptionPane.PLAIN_MESSAGE);
 
             }
         }

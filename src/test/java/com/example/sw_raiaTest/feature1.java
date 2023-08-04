@@ -1,5 +1,6 @@
 package com.example.sw_raiaTest;
 import com.example.sw_raia.TESTINPUT;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -76,10 +77,6 @@ assertTrue(string.equals("price must be more than 0") || string.equals("Bedroom 
         string.equals("The Number of house should be 7 bits 2 of Apartment Building number,2 of floor number, 3 for  apartment  number")
 ||string.equals("services shouldnt contan integer"));
     }
-
-
-
-
 
 
 

@@ -18,13 +18,7 @@ public class AddHousecontrol {
     @FXML
     void insert(MouseEvent event) {
         try {
-
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-            Parent myroot=(Parent)fxmlLoader.load();
-            Stage stage=new Stage();
-            stage.setTitle("houses!");
-            stage.setScene(new Scene(myroot));
-            stage.show();
+            NextPage.make("hello-view.fxml","Houses");
 
         }
         catch (IOException e) {

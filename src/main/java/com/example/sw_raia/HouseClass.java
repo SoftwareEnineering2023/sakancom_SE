@@ -12,16 +12,20 @@ public class HouseClass {
     private int numberTenant;
     private  boolean showed;
     private  boolean accepted;
-    public HouseClass(String pic,String ser,String loc,int pri,int balc,int bed,int bath,int numhouse)
+    public  HouseClass()
     {
-        this.picture=pic;
-        this.services=ser;
-        this.location=loc;
-        this.balcony=balc;
-        this.bedroom=bed;
-        this.bathroom=bath;
-        this.numberHouse=numhouse;
-        this.price=pri;
+
+    }
+    public HouseClass(HouseClass data)
+    {
+        this.picture=data.picture;
+        this.services=data.services;
+        this.location=data.location;
+        this.balcony=data.balcony;
+        this.bedroom=data.bedroom;
+        this.bathroom=data.bathroom;
+        this.numberHouse=data.numberHouse;
+        this.price=data.price;
         this.numberTenant=0;
         this.accepted=false;
         this.showed=false;
@@ -29,6 +33,7 @@ public class HouseClass {
     public String getPicture() {
         return picture;
     }
+
     public void setPicture(String picture) {
         this.picture = picture;
     }
@@ -92,6 +97,7 @@ public class HouseClass {
     public void setShowed(boolean showed) {
         this.showed = showed;
     }
+
 
 
 }
