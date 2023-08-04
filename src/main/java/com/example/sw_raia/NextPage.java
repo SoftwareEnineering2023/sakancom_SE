@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NextPage {
+    private NextPage()
+    {
+
+    }
 
     public static void make(String x,String y) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(x));

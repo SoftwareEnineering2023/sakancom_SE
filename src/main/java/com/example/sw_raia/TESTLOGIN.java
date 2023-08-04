@@ -3,39 +3,50 @@ package com.example.sw_raia;
 import javax.swing.*;
 
 public class TESTLOGIN {
-public  static boolean flag=true;
-    public static boolean userNametest(String string2) {
-if(logincontrol1.typeuser==1)
-{
-    if(sakanat.admin1.get(0).getUsername().trim().equals(string2.trim()))
-        return true;
-
-  else if(sakanat.admin1.get(1).getUsername().trim().equals(string2.trim()))
-        return true;
-  else    JOptionPane.showMessageDialog(null, "user not found", "incorrect", JOptionPane.ERROR_MESSAGE);
-
-
-}
-else if (logincontrol1.typeuser==2)
-{
-    for (int i=0;i<sakanat.owner1.size();i++)
+    public  static int typeuser;
+    public static   void fun(int x)
     {
-        if(sakanat.owner1.get(i).getUsername().trim().equals(string2.trim()))
-            return true;
-        else   flag=true;
+        typeuser=x;
     }
-if(flag==false){JOptionPane.showMessageDialog(null, "user not found", "incorrect", JOptionPane.ERROR_MESSAGE);flag=true;}
-}
-else if(logincontrol1.typeuser==3)
-{
-    for (int i=0;i<sakanat.tenant1.size();i++)
+private static   String x="user not found";
+private    static  String y="incorrect";
+    private TESTLOGIN()
     {
-        if(sakanat.tenant1.get(i).getUsername().trim().equals(string2.trim()))
+
+    }
+private   static boolean flag=true;
+    public static boolean userNametest(String string2) {
+if(typeuser==1)
+{
+    if(Sakanat.admin1.get(0).getUsername().trim().equals(string2.trim()))
+        return true;
+
+  else if(Sakanat.admin1.get(1).getUsername().trim().equals(string2.trim()))
+        return true;
+  else    JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
+
+
+}
+else if (typeuser==2)
+{
+    for (int i=0;i<Sakanat.owner1.size();i++)
+    {
+        if(Sakanat.owner1.get(i).getUsername().trim().equals(string2.trim()))
             return true;
-        else   flag=true;
+        else   flag=false;
+    }
+if(flag==false){JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);flag=true;}
+}
+else if(typeuser==3)
+{
+    for (int i=0;i<Sakanat.tenant1.size();i++)
+    {
+        if(Sakanat.tenant1.get(i).getUsername().trim().equals(string2.trim()))
+            return true;
+        else   flag=false;
     }
     if(flag==false) {
-        JOptionPane.showMessageDialog(null, "user not found", "incorrect", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
    flag=true; }
 }
 
@@ -45,42 +56,42 @@ return false;
     public static boolean passWordtest(String string2)
 
     {
-        if(logincontrol1.typeuser==1)
+        if(typeuser==1)
         {
-            if(sakanat.admin1.get(0).getPassword().trim().equals(string2.trim()))
+            if(Sakanat.admin1.get(0).getPassword().trim().equals(string2.trim()))
                 return true;
 
-            if(sakanat.admin1.get(1).getPassword().trim().equals(string2.trim()))
+            if(Sakanat.admin1.get(1).getPassword().trim().equals(string2.trim()))
                 return true;
         }
-        else if (logincontrol1.typeuser==2)
+        else if (typeuser==2)
         {
-            for (int i=0;i<sakanat.owner1.size();i++)
+            for (int i=0;i<Sakanat.owner1.size();i++)
             {
-                if(sakanat.owner1.get(i).getPassword().trim().equals(string2.trim()))
+                if(Sakanat.owner1.get(i).getPassword().trim().equals(string2.trim()))
                     return true;
-                else   flag=true;
+                else   flag=false;
             }
             if(flag==false)
             {
-                JOptionPane.showMessageDialog(null, "user not found", "incorrect", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
                 flag=true;
             }
 
 
         }
-        else if(logincontrol1.typeuser==3)
+        else if(typeuser==3)
         {
-            for (int i=0;i<sakanat.tenant1.size();i++)
+            for (int i=0;i<Sakanat.tenant1.size();i++)
             {
-                if(sakanat.tenant1.get(i).getPassword().trim().equals(string2.trim()))
+                if(Sakanat.tenant1.get(i).getPassword().trim().equals(string2.trim()))
                     return true;
                 else  flag=false;
 
             }
             if(flag==false)
             {
-                JOptionPane .showMessageDialog(null, "user not found", "incorrect", JOptionPane.ERROR_MESSAGE);
+                JOptionPane .showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
 flag=true;
             }
 

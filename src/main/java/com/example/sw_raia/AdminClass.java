@@ -1,7 +1,5 @@
 package com.example.sw_raia;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class AdminClass {
     private String username;
@@ -22,7 +20,7 @@ public class AdminClass {
         h.setBedroom(3);
         h.setBedroom(3);
         h.setNumberhouse(1102230);
-      sakanat.house1.add(h);
+      Sakanat.house1.add(h);
 
     }
     public String getUsername() {

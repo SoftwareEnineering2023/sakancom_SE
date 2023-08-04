@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+
+
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -15,7 +17,8 @@ public class HelloApplication extends Application {
     }
     public static void main(String[] args) {
 
-sakanat x=new sakanat();
+Sakanat x=new Sakanat();
+        x.addadmin();
         launch();
     }
 }

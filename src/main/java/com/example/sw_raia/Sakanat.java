@@ -1,23 +1,22 @@
 package com.example.sw_raia;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class sakanat {
+public class Sakanat {
 
-    static public List<HouseClass> house1 = new ArrayList<>();
-    static public List<AdminClass> admin1 = new ArrayList<>();
-    static public List<OwnerClass> owner1 = new ArrayList<>();
-    static public List<TenantClas> tenant1 = new ArrayList<>();
+     protected static final List<HouseClass> house1 = new ArrayList<>();
+    protected   static final List<AdminClass> admin1 = new ArrayList<>();
+    protected   static final List<OwnerClass> owner1 = new ArrayList<>();
+    protected   static final List<TenantClas> tenant1 = new ArrayList<>();
 
-    public  sakanat()
+    public  Sakanat()
     {
         addadmin();
         addhouse();
         addowner();
         addtenant();
     }
-public void addhouse()
+public static void addhouse()
 {
     HouseClass h1=new HouseClass();
     h1.setPicture("C:\\Users\\hp\\Desktop\\summer2023\\SW\\houses_picture\\house1.jpg");

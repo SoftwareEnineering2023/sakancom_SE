@@ -2,8 +2,6 @@ package com.example.sw_raia;
 import javafx.event.ActionEvent;
 import javax.swing.*;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -82,8 +80,8 @@ public class HelloController {
         else{
             int d=0;
             String x = numberHouse2.getText();
-            for (int i = 0; i <sakanat.house1.size(); i++) {
-                if (sakanat.house1.get(i).getNumberhouse() == Integer.parseInt(x)) {
+            for (int i = 0; i <Sakanat.house1.size(); i++) {
+                if (Sakanat.house1.get(i).getNumberhouse() == Integer.parseInt(x)) {
                     JOptionPane.showMessageDialog(null, "the house number already exit ", errorMassage, JOptionPane.ERROR_MESSAGE);
                     d++;
                 }
@@ -100,8 +98,8 @@ public class HelloController {
                 h.setBedroom(Integer.parseInt(bathroom2.getText()));
                 h.setNumberhouse(Integer.parseInt(numberHouse2.getText()));
 
-                sakanat.house1.add(h);
-                JOptionPane.showMessageDialog(null, "done"+sakanat.house1.get(0).getNumberhouse(), "correct", JOptionPane.PLAIN_MESSAGE);
+                Sakanat.house1.add(h);
+                JOptionPane.showMessageDialog(null, "done"+Sakanat.house1.get(0).getNumberhouse(), "correct", JOptionPane.PLAIN_MESSAGE);
 
             }
         }
