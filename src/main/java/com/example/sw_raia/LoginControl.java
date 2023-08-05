@@ -42,7 +42,7 @@ public class LoginControl {
 
     @FXML
     void getusertype(MouseEvent event) {
-
+        //getting user type
     }
 
     @FXML
@@ -64,7 +64,7 @@ public class LoginControl {
             else if (tenantRadio.isSelected()) {
                 if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
                     typeuser=3;
-                    NextPage.make("Tenant.fxml","Tenant Page");
+                    NextPage.make("tenantMainScreen.fxml","Tenant Page");
 
                 }
 
