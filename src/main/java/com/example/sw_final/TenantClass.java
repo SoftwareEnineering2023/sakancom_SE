@@ -1,13 +1,13 @@
 package com.example.sw_final;
 
-public class TenantClas
+public class TenantClass
 {
 
     private String username;
     private   String password;
     private  String gender;
     private  int id;
-    private  int phonenumber;
+    private  int phoneNumber;
 private  int age;
 private  String universityMajors;
 
@@ -45,12 +45,12 @@ private  String universityMajors;
         this.id = id;
     }
 
-    public int getPhonenumber() {
-        return phonenumber;
+    public int getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(int phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public int getAge() {

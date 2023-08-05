@@ -7,7 +7,7 @@ public class Sakanat {
      protected static final List<HouseClass> house1 = new ArrayList<>();
     protected   static final List<AdminClass> admin1 = new ArrayList<>();
     protected   static final List<OwnerClass> owner1 = new ArrayList<>();
-    protected   static final List<TenantClas> tenant1 = new ArrayList<>();
+    protected   static final List<TenantClass> tenant1 = new ArrayList<>();
 
     public Sakanat()
     {
@@ -77,21 +77,21 @@ public static void addhouse()
     }
     public void addtenant()
     {
-        TenantClas h1=new TenantClas();
+        TenantClass h1=new TenantClass();
         h1.setAge(20);
         h1.setid(425968711);
         h1.setGender("female");
-        h1.setPhonenumber(593646472);
+        h1.setPhoneNumber(593646472);
         h1.setPassword("11");
         h1.setUniversityMajors("CE");
         h1.setUsername("Salma");
         tenant1.add(h1);
 
-        TenantClas h2=new TenantClas();
+        TenantClass h2=new TenantClass();
         h2.setAge(30);
         h2.setid(745895644);
         h2.setGender("male");
-        h2.setPhonenumber(595761287);
+        h2.setPhoneNumber(595761287);
         h2.setPassword("145236**");
         h2.setUniversityMajors("medicin");
         h2.setUsername("Ghaith abdullah");
