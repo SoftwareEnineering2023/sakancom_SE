@@ -19,7 +19,7 @@ public class Sakanat {
 public static void addhouse()
 {
     HouseClass h1=new HouseClass();
-    h1.setPicture("C:\\Users\\hp\\Desktop\\summer2023\\SW\\houses_picture\\house1.jpg");
+    h1.setPicture("C:/Users/Azhar Shhadeh/Downloads/house1.jpg");
     h1.setServices("electricy,water");
     h1.setLocation("rafidia");
     h1.setPrice(Integer.parseInt("650"));
@@ -29,8 +29,9 @@ public static void addhouse()
     h1.setNumberhouse(Integer.parseInt("1102230"));
     house1.add(h1);
 
+
     HouseClass h2=new HouseClass();
-    h2.setPicture("C:\\Users\\hp\\Desktop\\summer2023\\SW\\houses_picture\\house2.jpg");
+    h2.setPicture("C:/Users/Azhar Shhadeh/Downloads/house1.jpg");
     h2.setServices("electricy,water,WIFI");
     h2.setLocation("najah_street");
     h2.setPrice(Integer.parseInt("700"));
@@ -81,9 +82,9 @@ public static void addhouse()
         h1.setid(425968711);
         h1.setGender("female");
         h1.setPhonenumber(593646472);
-        h1.setPassword("98765**");
+        h1.setPassword("11");
         h1.setUniversityMajors("CE");
-        h1.setUsername("Salma abdullah");
+        h1.setUsername("Salma");
         tenant1.add(h1);
 
         TenantClas h2=new TenantClas();

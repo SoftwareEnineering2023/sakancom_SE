@@ -59,7 +59,7 @@ else {
                    TESTLOGIN.fun(3);
 
                    if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
-                       NextPage.make("Tenant.fxml", "Tenant Page");
+                       NextPage.make("tenantMainScreen.fxml", "Tenant Page");
 
                    }
 

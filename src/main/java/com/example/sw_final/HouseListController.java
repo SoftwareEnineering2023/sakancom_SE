@@ -18,32 +18,26 @@ public class HouseListController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Call the method to populate house information in the VBox
         populateHouses();
     }
 
     private void populateHouses() {
-        // Clear any previous content in the VBox
         houseContainer.getChildren().clear();
 
-        // Iterate over the list of houses in the sakanat class
         for (HouseClass house : Sakanat.house1) {
-            // Create a VBox to hold the house information
             VBox houseBox = new VBox();
             houseBox.setSpacing(5);
 
-            // Create an ImageView for the house image
             ImageView imageView = new ImageView();
             try {
                 Image image = new Image(new FileInputStream(house.getPicture()));
                 imageView.setImage(image);
-                imageView.setFitWidth(200); // Set image width (adjust as needed)
+                imageView.setFitWidth(200);
                 imageView.setPreserveRatio(true);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
 
-            // Create labels to display house information
             Label houseNumberLabel = new Label("House Number: " + house.getNumberhouse());
             Label locationLabel = new Label("Location: " + house.getLocation());
             Label priceLabel = new Label("Price: $" + house.getPrice());
