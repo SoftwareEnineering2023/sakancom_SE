@@ -29,13 +29,13 @@ public class HouseListController implements Initializable {
 
     @FXML
     private void bookButtonHandls() {
-        TenantClass tenantB = new TenantClass();
-        // Initialize it as null
+        TenantClass tenantB = null;
 
         // Find the tenant with the matching ID
-        String tenantID = LoginControl1.userlog;// Get the tenant ID from login page
+        String tenantUsername = LoginControl1.userlog;// Get the tenant ID from login page
         for (TenantClass tenant : Sakanat.tenant1) {
-            if (tenantID.equals(tenant.getUsername())) {
+            if (tenantUsername.equals(tenant.getUsername())) {
+                tenantB = tenant;
                 break; // Found the tenant, no need to continue looping
             }
         }
@@ -56,8 +56,6 @@ public class HouseListController implements Initializable {
             alert.setContentText("You have already booked a house.");
             alert.showAndWait();
         } else {
-            // Perform booking logic here
-            // Set the booking flag for the tenant
             tenantB.setBooked(true);
 
             // Display a success message
