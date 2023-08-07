@@ -1,7 +1,7 @@
 package com.example.sw_final;
         import javafx.fxml.FXML;
         import javafx.fxml.Initializable;
-
+        import com.example.sw_final.Sakanat;
         import javafx.scene.control.Alert;
         import javafx.scene.control.Button;
         import javafx.scene.control.Label;
@@ -9,10 +9,14 @@ package com.example.sw_final;
         import javafx.scene.image.ImageView;
         import javafx.scene.layout.VBox;
 
+        import javax.swing.*;
         import java.io.FileInputStream;
         import java.io.FileNotFoundException;
+        import java.io.IOException;
         import java.net.URL;
         import java.util.ResourceBundle;
+
+        import static com.example.sw_final.WelcomeControl.logger;
 
 public class HouseListController implements Initializable {
 
@@ -20,6 +24,7 @@ public class HouseListController implements Initializable {
     private VBox houseContainer;
     private Button bookHouse;
 
+    public   static int houseNum;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         populateHouses();
@@ -28,7 +33,7 @@ public class HouseListController implements Initializable {
     }
 
     @FXML
-    private void bookButtonHandls() {
+    private void bookButtonHandls() throws RuntimeException {
         TenantClass tenantB = null;
 
         // Find the tenant with the matching ID
@@ -64,6 +69,19 @@ public class HouseListController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("You have successfully booked a house.");
             alert.showAndWait();
+            AdminRequist Request = new AdminRequist();
+            Request.setUsername(tenantUsername);
+            Request.setHouseNum(houseNum);
+            Sakanat.request.add(Request);
+            JOptionPane.showMessageDialog(null,Sakanat.request.get(0).getHouseNum() + Sakanat.request.get(0).getUsername() );
+
+            try {
+                NextPage.make("tenantBook.fxml","login page");
+
+            }
+            catch (IOException e) {
+                logger.log(null, "An error occurred while opening a new window:");
+            }
         }
     }
 
@@ -73,7 +91,7 @@ public class HouseListController implements Initializable {
         for (HouseClass house : Sakanat.house1) {
             VBox houseBox = new VBox();
             houseBox.setSpacing(5);
-
+            houseNum = house.getNumberhouse();
             ImageView imageView = new ImageView();
             try {
                 Image image = new Image(new FileInputStream(house.getPicture()));

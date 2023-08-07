@@ -8,6 +8,7 @@ public class Sakanat {
     protected   static final List<AdminClass> admin1 = new ArrayList<>();
     protected   static final List<OwnerClass> owner1 = new ArrayList<>();
     protected   static final List<TenantClass> tenant1 = new ArrayList<>();
+    protected   static final List<AdminRequist> request = new ArrayList<>();
 
     public Sakanat()
     {

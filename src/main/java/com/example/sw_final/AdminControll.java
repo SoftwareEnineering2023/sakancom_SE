@@ -1,6 +1,7 @@
 
 package com.example.sw_final;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -45,11 +46,17 @@ public class AdminControll {
 
     @FXML
     void requestcheck(MouseEvent event) {
+        try {
+            NextPage.make("test.fxml","Houses");
 
+        }
+        catch (IOException e) {
+            logger.log(null, "An error occurred while opening a new window:");
+        }
     }
 
     @FXML
-    void reservationcheck(MouseEvent event) {
+    void reservationcheck(ActionEvent event) {
 
     }
 
