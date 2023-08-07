@@ -8,8 +8,19 @@ public class TenantClass
     private  String gender;
     private  int id;
     private  int phoneNumber;
-private  int age;
-private  String universityMajors;
+    private  int age;
+    private  String universityMajors;
+    private  boolean isBooked;
+
+
+    public boolean isBooked() {
+        return isBooked;
+    }
+
+    public void setBooked(boolean booked) {
+        isBooked = booked;
+    }
+
 
 
     public String getUsername() {

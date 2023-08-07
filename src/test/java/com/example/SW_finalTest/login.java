@@ -4,25 +4,24 @@ import com.example.sw_final.TESTLOGIN;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class login {
 
     @Given("I click on loginchoose and flag is {string}")
     public void iClickOnLoginchooseAndFlagIs(String string) {
-        assertEquals(true,string.equals("true"));
+        assertTrue(string.equals("true"));
 
     }
 
     @Given("the user leaves  field {string} empty")
     public void theUserLeavesFieldEmpty(String string) {
-        assertEquals(true,string.isEmpty());
+        assertTrue(string.isEmpty());
     }
 
     @Given("clicks on the {string} button")
     public void clicksOnTheButton(String string) {
-        assertEquals(true,string.equals("Login"));
+        assertTrue(string.equals("Login"));
 
     }
     @Then("the user should see an error message indicating {string}")
@@ -33,10 +32,10 @@ public class login {
     @Given("he fills in {string} with {string}")
     public void heFillsInWith(String string, String string2) {
         if(string.equals("username")){
-            assertEquals(true, !TESTLOGIN.userNametest(string2));
+            assertTrue(!TESTLOGIN.userNametest(string2));
         }
         else if (string.equals("password")) {
-            assertEquals(true,!TESTLOGIN.passWordtest(string2));
+            assertTrue(!TESTLOGIN.passWordtest(string2));
         }
 
     }
@@ -44,10 +43,10 @@ public class login {
     @Given("he fills in {string} with the {string}")
     public void heFillsInWithThe(String string, String string2) {
         if(string.equals("username")){
-            assertEquals(false, TESTLOGIN.userNametest(string2));
+            assertFalse(TESTLOGIN.userNametest(string2));
         }
         else if (string.equals("password")) {
-            assertEquals(false,TESTLOGIN.passWordtest(string2));
+            assertFalse(TESTLOGIN.passWordtest(string2));
         }
 
     }
@@ -58,7 +57,7 @@ public class login {
 
     @Then("show  the massage {string}")
     public void showTheMassage(String string) {
-        assertEquals(true,string.equals("Login  has been successfule"));
+        assertTrue(string.equals("Login  has been successfule"));
 
     }
 }

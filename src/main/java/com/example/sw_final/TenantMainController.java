@@ -31,19 +31,15 @@ public class TenantMainController {
 
     private void openScreen(String fxmlFileName, String windowTitle) {
         try {
-            refactored(fxmlFileName, windowTitle);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
+            Parent myroot = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle(windowTitle);
+            stage.setScene(new Scene(myroot));
+            stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    static void refactored(String fxmlFileName, String windowTitle) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
-        Parent myroot = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setTitle(windowTitle);
-        stage.setScene(new Scene(myroot));
-        stage.show();
     }
 }

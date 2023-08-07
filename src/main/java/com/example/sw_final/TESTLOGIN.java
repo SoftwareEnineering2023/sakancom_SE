@@ -8,8 +8,8 @@ public class TESTLOGIN {
     {
         typeuser=x;
     }
-private static   String x="user not found";
-private    static  String y="incorrect";
+    private static final String x="user not found";
+    private    static final String y="incorrect";
     private TESTLOGIN()
     {
 
@@ -35,7 +35,7 @@ else if (typeuser==2)
             return true;
         else   flag=false;
     }
-if(flag==false){JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);flag=true;}
+if(!flag){JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);flag=true;}
 }
 else if(typeuser==3)
 {
@@ -45,7 +45,7 @@ else if(typeuser==3)
             return true;
         else   flag=false;
     }
-    if(flag==false) {
+    if(!flag) {
         JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
    flag=true; }
 }
@@ -61,8 +61,7 @@ return false;
             if(Sakanat.admin1.get(0).getPassword().trim().equals(string2.trim()))
                 return true;
 
-            if(Sakanat.admin1.get(1).getPassword().trim().equals(string2.trim()))
-                return true;
+            return Sakanat.admin1.get(1).getPassword().trim().equals(string2.trim());
         }
         else if (typeuser==2)
         {
@@ -72,7 +71,7 @@ return false;
                     return true;
                 else   flag=false;
             }
-            if(flag==false)
+            if(!flag)
             {
                 JOptionPane.showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
                 flag=true;
@@ -89,7 +88,7 @@ return false;
                 else  flag=false;
 
             }
-            if(flag==false)
+            if(!flag)
             {
                 JOptionPane .showMessageDialog(null, x, y, JOptionPane.ERROR_MESSAGE);
 flag=true;

@@ -55,13 +55,10 @@ public  class TESTINPUT {
 
 
     public static boolean houseNumbertest(String string2) {
-        boolean f=false;
+        boolean f= (string2.length() == 7) && Character.isDigit(string2.charAt(0)) && Character.isDigit(string2.charAt(1)) && (Character.isDigit(string2.charAt(2)) || (string2.charAt(2) == 'G') || (string2.charAt(2) == 'B') || (string2.charAt(2) == 'g') || (string2.charAt(2) == 'b')) &&
+                Character.isDigit(string2.charAt(3)) && Character.isDigit(string2.charAt(4)) && Character.isDigit(string2.charAt(5)) && Character.isDigit(string2.charAt(6));
 
-        if ((string2.length() == 7)&&Character.isDigit(string2.charAt(0)) && Character.isDigit(string2.charAt(1)) && (Character.isDigit(string2.charAt(2)) || (string2.charAt(2) == 'G') || (string2.charAt(2) == 'B') || (string2.charAt(2) == 'g') || (string2.charAt(2) == 'b')) &&
-                Character.isDigit(string2.charAt(3)) && Character.isDigit(string2.charAt(4)) && Character.isDigit(string2.charAt(5)) && Character.isDigit(string2.charAt(6)))
-            f= true;
-
-return f;
+        return f;
     }
 
 

@@ -1,6 +1,9 @@
 package com.example.sw_final;
         import javafx.fxml.FXML;
         import javafx.fxml.Initializable;
+
+        import javafx.scene.control.Alert;
+        import javafx.scene.control.Button;
         import javafx.scene.control.Label;
         import javafx.scene.image.Image;
         import javafx.scene.image.ImageView;
@@ -15,10 +18,55 @@ public class HouseListController implements Initializable {
 
     @FXML
     private VBox houseContainer;
+    private Button bookHouse;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         populateHouses();
+
+
+    }
+
+    @FXML
+    private void bookButtonHandls() {
+        TenantClass tenantB = new TenantClass();
+        // Initialize it as null
+
+        // Find the tenant with the matching ID
+        String tenantID = LoginControl1.userlog;// Get the tenant ID from login page
+        for (TenantClass tenant : Sakanat.tenant1) {
+            if (tenantID.equals(tenant.getUsername())) {
+                break; // Found the tenant, no need to continue looping
+            }
+        }
+
+        if (tenantB == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("// Tenant with the specified ID was not found");
+            alert.setHeaderText(null);
+            alert.setContentText("You have already booked a house.");
+            alert.showAndWait();
+            return;
+        }
+
+        if (tenantB.isBooked()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("You are already booked");
+            alert.setHeaderText(null);
+            alert.setContentText("You have already booked a house.");
+            alert.showAndWait();
+        } else {
+            // Perform booking logic here
+            // Set the booking flag for the tenant
+            tenantB.setBooked(true);
+
+            // Display a success message
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Booking Successful");
+            alert.setHeaderText(null);
+            alert.setContentText("You have successfully booked a house.");
+            alert.showAndWait();
+        }
     }
 
     private void populateHouses() {
@@ -44,15 +92,17 @@ public class HouseListController implements Initializable {
             Label servicesLabel = new Label("Services: " + house.getServices());
             Label balconyLabel = new Label("Balcony: " + house.getBalcony());
             Label bedroomLabel = new Label("Bedroom: " + house.getBedroom());
-
-            // Add the image and labels to the VBox
-            houseBox.getChildren().addAll(
+            bookHouse = new Button("BOOK");
+            bookHouse.setOnAction(e -> bookButtonHandls());
+                    houseBox.getChildren().addAll(
                     imageView, houseNumberLabel, locationLabel, priceLabel,
-                    servicesLabel, balconyLabel, bedroomLabel
+                    servicesLabel, balconyLabel, bedroomLabel,bookHouse
             );
 
-            // Add the VBox to the main houseContainer VBox
             houseContainer.getChildren().add(houseBox);
+
+            // here i want to put a button action event for each button
+
         }
     }
 }

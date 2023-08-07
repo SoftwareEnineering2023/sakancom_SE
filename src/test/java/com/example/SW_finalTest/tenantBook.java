@@ -1,5 +1,6 @@
 package com.example.SW_finalTest;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -13,11 +14,18 @@ public class tenantBook {
     public void providesTheMoveInDateAndLeaseDuration() {
 
     }
-    @Then("the tenant should be able to book the accommodation successfully")
-    public void theTenantShouldBeAbleToBookTheAccommodationSuccessfully() {
 
 
+
+    @Then("the tenant should be able to book the house successfully")
+    public void theTenantShouldBeAbleToBookTheHouseSuccessfully() {
     }
 
+    @And("he is already booked an house")
+    public void heIsAlreadyBookedAnHouse() {
+    }
 
+    @Then("the tenant can't book house")
+    public void theTenantCanTBookHouse() {
+    }
 }

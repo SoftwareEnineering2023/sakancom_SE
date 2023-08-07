@@ -1,6 +1,9 @@
 package com.example.sw_final;
 
 public class HouseClass {
+
+
+    private  int idOwner;
     private String picture;
     private String services;
     private String location;
@@ -29,6 +32,7 @@ public class HouseClass {
         this.numberTenant=0;
         this.accepted=false;
         this.showed=false;
+        this.idOwner = data.idOwner;
     }
     public String getPicture() {
         return picture;
@@ -42,6 +46,13 @@ public class HouseClass {
     }
     public void setServices(String services) {
         this.services = services;
+    }
+    public int getIdOwner() {
+        return idOwner;
+    }
+
+    public void setIdOwner(int idOwner) {
+        this.idOwner = idOwner;
     }
     public String getLocation() {
         return location;

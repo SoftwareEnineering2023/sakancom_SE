@@ -14,6 +14,11 @@ public class NextPage {
     }
 
     public static void make(String x,String y) throws IOException {
-        TenantMainController.refactored(x, y);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(x));
+        Parent myroot = fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setTitle(y);
+        stage.setScene(new Scene(myroot));
+        stage.show();
     }
 }

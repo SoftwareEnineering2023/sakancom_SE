@@ -8,9 +8,9 @@
     <VBox layoutX="20.0" layoutY="20.0" prefHeight="360.0" prefWidth="560.0">
     <children>
         <Label text="Tenant Control Panel:" />
-        <Label fx:id="personalDataLabel" />
-        <Label fx:id="ownerContactLabel" />
-        <Label fx:id="rentPaymentLabel" />
+        <Label fx:id="personalDataLabel" prefHeight="18.0" prefWidth="190.0" />
+        <Label fx:id="ownerContactLabel" prefHeight="18.0" prefWidth="156.0" />
+        <Label fx:id="rentPaymentLabel" prefHeight="18.0" prefWidth="155.0" />
     </children>
 </VBox>
 </AnchorPane>

@@ -36,8 +36,19 @@ public  class LoginControl1 {
    @FXML
    private  TextField username;
 
+    public String getUserlog() {
+        return userlog;
+    }
 
-   @FXML
+    public void setUserlog(String userlog) {
+        LoginControl1.userlog = userlog;
+    }
+
+    public static String userlog;
+
+
+
+    @FXML
 void  loginbutton(MouseEvent event) {
        try {
            if(username.getText().isEmpty()||password.getText().isEmpty())
@@ -59,6 +70,8 @@ else {
                    TESTLOGIN.fun(3);
 
                    if (TESTLOGIN.userNametest(username.getText()) && TESTLOGIN.passWordtest(password.getText())) {
+                       userlog = username.getText();
+                       setUserlog( username.getText())  ;
                        NextPage.make("tenantMainScreen.fxml", "Tenant Page");
 
                    }

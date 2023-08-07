@@ -16,7 +16,7 @@ public class HelloController {
     String s1="Unvalied number";
 
     String temp;
-    private String errorMassage="errorMassage";
+    public  static final String ERROR_MASSAGE ="errorMassage";
 
     @FXML
     private Button add2;
@@ -63,7 +63,7 @@ public class HelloController {
             housePicture2.setImage(new Image(iconimagepath));
             temp=iconimagepath;
         }
-        else if(!TESTINPUT.housePictureTest(temp)) JOptionPane.showMessageDialog(null,"Unvalied Picture",errorMassage,JOptionPane.ERROR_MESSAGE);
+        else if(!TESTINPUT.housePictureTest(temp)) JOptionPane.showMessageDialog(null,"Unvalied Picture", ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
     }
 
 
@@ -73,18 +73,18 @@ public class HelloController {
     void savedhouse(ActionEvent event) {
         if(location2.getText().isEmpty() || price2.getText().isEmpty() || services2.getText().isEmpty() || bedroom2.getText().isEmpty()
                 || bathroom2.getText().isEmpty()|| balcony2.getText().isEmpty()|| numberHouse2.getText().isEmpty())
-            JOptionPane.showMessageDialog(null,"Please Fill the Data First !",errorMassage,JOptionPane.ERROR_MESSAGE);
-        else if(!TESTINPUT.priceTest(price2.getText())) JOptionPane.showMessageDialog(null,"Unvalied price",errorMassage,JOptionPane.ERROR_MESSAGE);
-        else if(!TESTINPUT.houseBathroomTest(bathroom2.getText())) JOptionPane.showMessageDialog(null,s1,errorMassage,JOptionPane.ERROR_MESSAGE);
-        else if(!TESTINPUT.houseBalconyTest(balcony2.getText())) JOptionPane.showMessageDialog(null,s1,errorMassage,JOptionPane.ERROR_MESSAGE);
-        else if(!TESTINPUT.houseBedroomTest(bedroom2.getText())) JOptionPane.showMessageDialog(null,s1,errorMassage,JOptionPane.ERROR_MESSAGE);
-        else if(!TESTINPUT.houseServicesTest(services2.getText())) JOptionPane.showMessageDialog(null,"Unvalied ",errorMassage,JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please Fill the Data First !", ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
+        else if(!TESTINPUT.priceTest(price2.getText())) JOptionPane.showMessageDialog(null,"Unvalied price", ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
+        else if(!TESTINPUT.houseBathroomTest(bathroom2.getText())) JOptionPane.showMessageDialog(null,s1, ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
+        else if(!TESTINPUT.houseBalconyTest(balcony2.getText())) JOptionPane.showMessageDialog(null,s1, ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
+        else if(!TESTINPUT.houseBedroomTest(bedroom2.getText())) JOptionPane.showMessageDialog(null,s1, ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
+        else if(!TESTINPUT.houseServicesTest(services2.getText())) JOptionPane.showMessageDialog(null,"Unvalied ", ERROR_MASSAGE,JOptionPane.ERROR_MESSAGE);
         else{
             int d=0;
             String x = numberHouse2.getText();
             for (int i = 0; i <Sakanat.house1.size(); i++) {
                 if (Sakanat.house1.get(i).getNumberhouse() == Integer.parseInt(x)) {
-                    JOptionPane.showMessageDialog(null, "the house number already exit ", errorMassage, JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "the house number already exit ", ERROR_MASSAGE, JOptionPane.ERROR_MESSAGE);
                     d++;
                 }
             }
